@@ -3,7 +3,7 @@
   <el-form :model="spuForm" label-width="70px">
 
     <el-form-item label="spu名称">
-      <el-input v-model="spuForm.spuName"/>
+      <el-input v-model="spuForm.productName"/>
     </el-form-item>
 
     <el-form-item label="spu描述">
@@ -129,7 +129,7 @@ export default {
       // Spu表单数据
       spuForm: {
         id: null,
-        spuName: null,
+        productName: null,
         description: null,
         catalog3Id: null,
         // 上传文件列表
@@ -157,7 +157,7 @@ export default {
       // Spu表单数据
       this.spuForm = {
         id: null,
-        spuName: null,
+        productName: null,
         description: null,
         catalog3Id: null,
         // 上传文件列表

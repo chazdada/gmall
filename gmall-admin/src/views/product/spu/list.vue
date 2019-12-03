@@ -29,7 +29,7 @@
         </el-table-column>
         <el-table-column label="商品名称">
           <template slot-scope="scope">
-            <span>{{ scope.row.spuName }}</span>
+            <span>{{ scope.row.productName }}</span>
           </template>
         </el-table-column>
         <el-table-column label="商品描述">
@@ -40,7 +40,7 @@
 
         <el-table-column label="操作" width="200" align="center">
           <template slot-scope="scope">
-            <el-button type="primary" size="mini" icon="el-icon-plus" @click="addSku(scope.row.id, scope.row.spuName)">添加SKU</el-button>
+            <el-button type="primary" size="mini" icon="el-icon-plus" @click="addSku(scope.row.id, scope.row.productName)">添加SKU</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -60,7 +60,7 @@
       ref="skuForm"
       :catalog-id="catalogId"
       :spu-id="selectedSpu.spuId"
-      :spu-name="selectedSpu.spuName"
+      :spu-name="selectedSpu.productName"
       @listenOnSave="onSkuSave()"
       @listenOnClose="onSkuClose()"/>
 
@@ -95,7 +95,7 @@ export default {
       // 选中的spu
       selectedSpu: {
         spuId: null,
-        spuName: null
+        productName: null
       }
     }
   },
@@ -154,9 +154,9 @@ export default {
     },
 
     // 添加sku
-    addSku(spuId, spuName) {
+    addSku(spuId, productName) {
       this.selectedSpu.spuId = spuId
-      this.selectedSpu.spuName = spuName
+      this.selectedSpu.productName = productName
 
       // 初始化表单
       this.$refs.skuForm.init(spuId)
